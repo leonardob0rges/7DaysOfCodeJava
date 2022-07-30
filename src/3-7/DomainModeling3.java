@@ -29,10 +29,17 @@ class DomainModeling3 {
         // var statusCode = response.statusCode();
         // var headers = response.headers();
         String body = response.body();
-
         List<Movie> movies = parse(body);
-        System.out.println(movies.size()); // imprime o número de elementos na lista de array
-        System.out.println(movies.get(0)); // imprime o índice com determinado filme e seus atributos
+        
+        System.out.println("Elementos no moviesArray: " + movies.size()); // imprime o número de elementos na lista de array
+        for(int i = 0; i < movies.size(); i++){
+            System.out.println(movies.get(i)); // imprime o/os índice/s com o/os filme/s e seus atributos
+        }
+        /*int i = 0;
+        while(i < movies.size()){
+            System.out.println(movies.get(i)); 
+            i++;
+        }*/
     }
     private static List<Movie> parse(String body) {
         String[] moviesArray = parseJsonMovies(body);
